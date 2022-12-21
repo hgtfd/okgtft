@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bnm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bnm
+  template:
+    metadata:
+      labels:
+        app: bnm
+    spec:
+      containers:
+      - image: okteto.dev/myu:latest
+        name: bnm
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "5f976d8d-0cc8-475d-85d8-64b6bba89719"
+        - name: Vless_Path
+          value: "/vlvhgfye"
+        - name: Vmess_UUID
+          value: "05bd0eff-5d5a-4897-9e53-588edbbae805"
+        - name: Vmess_Path
+          value: "/fdbjui75u56ehtd"
+        - name: Share_Path
+          value: "/vmhfgy"
